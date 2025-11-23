@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "379446555881",
-    "project_id": "healthpulse-data",
-    "storage_bucket": "healthpulse-data.firebasestorage.app"
+    "project_number": "411225070178",
+    "project_id": "trab-brademo-gabi-45984",
+    "storage_bucket": "trab-brademo-gabi-45984.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379446555881:android:772df98c4b40d4729f2c78",
+        "mobilesdk_app_id": "1:411225070178:android:42a86546d4d87592058f3b",
         "android_client_info": {
           "package_name": "com.example.trabalho01"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC3q3TBhgMoG_pXujgpJSuAXvMrGLgkUbY"
+          "current_key": "AIzaSyDTc-A-aV_nJEYKQb05-pCBYactaSlHBuM"
         }
       ],
       "services": {

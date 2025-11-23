@@ -10,7 +10,7 @@ class FormScreen extends StatelessWidget {
     // Usamos read para ações e watch para obter o estado
     final controller = context.read<FormController>();
     final state = context.watch<FormController>();
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     const Color neonGreen = Color(0xFF29E33C);
 
     return Scaffold(
@@ -35,7 +35,7 @@ class FormScreen extends StatelessWidget {
               children: [
                 Image.asset('assets/images/icon_heartpulse.png', color: neonGreen, width: 90, height: 90),
                 const SizedBox(height: 16),
-                RichText(textAlign: TextAlign.center, text: const TextSpan(children: [const TextSpan(text: "Bem-Vindo ao ", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),), const TextSpan(text: "HealthPulse!", style: TextStyle(color: neonGreen, fontSize: 30, fontWeight: FontWeight.bold),),],),),
+                RichText(textAlign: TextAlign.center, text: const TextSpan(children: [TextSpan(text: "Bem-Vindo ao ", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),), TextSpan(text: "HealthPulse!", style: TextStyle(color: neonGreen, fontSize: 30, fontWeight: FontWeight.bold),),],),),
                 const SizedBox(height: 8),
                 const Text("Vamos começar:", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.normal), textAlign: TextAlign.center,),
               ],
@@ -45,7 +45,7 @@ class FormScreen extends StatelessWidget {
 
             // --- Formulário de Cadastro ---
             Form(
-              key: _formKey, 
+              key: formKey, 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -102,7 +102,7 @@ class FormScreen extends StatelessWidget {
 
                   // Seleção de Gênero (Mantida, pois onChanged já chama o setter corretamente)
                   DropdownButtonFormField<String>(
-                    value: state.genero, 
+                    initialValue: state.genero, 
                     style: const TextStyle(color: Colors.white),
                     dropdownColor: Colors.grey[900],
                     decoration: const InputDecoration(labelText: "Gênero", labelStyle: TextStyle(color: Colors.white70), enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white38)), focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.greenAccent)),),
@@ -135,7 +135,7 @@ class FormScreen extends StatelessWidget {
                   Center(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: neonGreen),
-                      onPressed: () => controller.handleSubmit(context, _formKey),
+                      onPressed: () => controller.handleSubmit(context, formKey),
                       child: const Text(
                         "Concluir",
                         style: TextStyle(

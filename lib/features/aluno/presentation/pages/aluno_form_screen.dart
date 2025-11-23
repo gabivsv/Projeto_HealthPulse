@@ -50,11 +50,25 @@ class _AlunoFormScreenState extends State<AlunoFormScreen> {
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: _dataNascimento ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2030),
+        builder: (context, child) {
+          return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: const ColorScheme.dark(
+                primary: Color.fromRGBO(41, 227, 60, 1),
+                onPrimary: Colors.black,
+                surface: Color(0xFF1A1A1A),
+                onSurface: Colors.white,
+              ),
+              dialogBackgroundColor: Colors.black,
+            ),
+            child: child!,
+          );
+        },
+      );
     if (picked != null) {
       setState(() {
         _dataNascimento = picked;
@@ -167,7 +181,7 @@ class _AlunoFormScreenState extends State<AlunoFormScreen> {
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _genero,
+              initialValue: _genero,
               decoration: const InputDecoration(
                 labelText: 'Gênero (opcional)',
                 labelStyle: TextStyle(color: Colors.white70),

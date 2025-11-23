@@ -66,7 +66,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'Fazer Login',
+                  'Comece Agora',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,

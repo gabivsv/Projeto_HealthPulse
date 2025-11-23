@@ -126,11 +126,25 @@ class _MedicaoFormScreenState extends State<MedicaoFormScreen> {
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: _dataMedicao ?? DateTime.now(),
-      firstDate: DateTime(2020),
-      lastDate: DateTime.now().add(const Duration(days: 1)),
-    );
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2030),
+        builder: (context, child) {
+          return Theme(
+            data: Theme.of(context).copyWith(
+              colorScheme: const ColorScheme.dark(
+                primary: Color.fromRGBO(41, 227, 60, 1),
+                onPrimary: Colors.black,
+                surface: Color(0xFF1A1A1A),
+                onSurface: Colors.white,
+              ),
+              dialogBackgroundColor: Colors.black,
+            ),
+            child: child!,
+          );
+        },
+      );
     if (picked != null) {
       setState(() {
         _dataMedicao = picked;
@@ -202,7 +216,7 @@ class _MedicaoFormScreenState extends State<MedicaoFormScreen> {
           padding: const EdgeInsets.all(16),
           children: [
             DropdownButtonFormField<String>(
-              value: _selectedAlunoId,
+              initialValue: _selectedAlunoId,
               decoration: const InputDecoration(
                 labelText: 'Aluno *',
                 labelStyle: TextStyle(color: Colors.white70),
@@ -326,7 +340,12 @@ class _MedicaoFormScreenState extends State<MedicaoFormScreen> {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: _save,
-              child: const Text('Salvar'),
+              child: const Text(
+                'Salvar', 
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

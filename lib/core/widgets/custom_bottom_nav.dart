@@ -1,65 +1,72 @@
 import 'package:flutter/material.dart';
-import 'package:trabalho01/core/theme/app_theme.dart'; // Para baseGreen
+import 'package:trabalho01/core/theme/app_theme.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final Color componentColor;
+  final String activeKey;
   final VoidCallback onHomeTap;
-  final VoidCallback onActivityTap; 
-  final String activePath; 
+  final VoidCallback onTreinoTap;
+  final VoidCallback onAtividadesTap;
+  final VoidCallback onConfigTap;
 
   const CustomBottomNav({
-    super.key, 
+    super.key,
     required this.componentColor,
-    required this.onHomeTap, 
-    required this.onActivityTap,
-    required this.activePath,
+    required this.activeKey,
+    required this.onHomeTap,
+    required this.onTreinoTap,
+    required this.onAtividadesTap,
+    required this.onConfigTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    const double iconSize = 30;
+
     final List<Map<String, dynamic>> navItems = [
-      {'path': 'assets/icons/icon1.png', 'action': onHomeTap}, 
-      {'path': 'assets/icons/icon2.png', 'action': () {}},     
-      {'path': 'assets/icons/icon3.png', 'action': () {}}, 
-      {'path': 'assets/icons/icon4.png', 'action': onActivityTap},    
+      {
+        'key': 'home',
+        'icon': Icons.home,
+        'action': onHomeTap,
+      },
+      {
+        'key': 'treino',
+        'icon': Icons.fitness_center,
+        'action': onTreinoTap,
+      },
+      {
+        'key': 'atividades',
+        'icon': Icons.list_alt,
+        'action': onAtividadesTap,
+      },
+      {
+        'key': 'config',
+        'icon': Icons.settings,
+        'action': onConfigTap,
+      },
     ];
-    
-    const double iconSize = 30.0;
-    
+
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: componentColor, 
+        color: componentColor,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(25),
           topRight: Radius.circular(25),
-        )
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          // Renderiza todos os itens de navegação
-          ...navItems.map((item) {
-            final tapAction = item['action'] as VoidCallback? ?? () {};
-            // Determina se o ícone atual é o ícone ativo (verde)
-            final bool isActive = item['path'] == activePath; 
-            
-            final color = isActive ? baseGreen : Colors.white70;
+        children: navItems.map((item) {
+          final bool isActive = item["key"] == activeKey;
 
-            return IconButton(
-              padding: EdgeInsets.zero,
-              icon: SizedBox( 
-                width: iconSize,
-                height: iconSize,
-                child: Image.asset(
-                  item['path'],
-                  color: color, 
-                ),
-              ),
-              onPressed: tapAction,
-            );
-          }),
-        ],
+          return IconButton(
+            iconSize: iconSize,
+            color: isActive ? baseGreen : Colors.white70,
+            onPressed: item["action"],
+            icon: Icon(item["icon"]),
+          );
+        }).toList(),
       ),
     );
   }

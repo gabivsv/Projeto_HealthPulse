@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     // Usamos read para acessar métodos de ação (handleLogin, setLoginEmail/Password)
     final controller = context.read<FormController>();
 
@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
 
             // --- Formulário de Login ---
             Form(
-              key: _formKey, 
+              key: formKey, 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -115,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                         backgroundColor: baseGreen,
                         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       ),
-                      onPressed: () => controller.handleLogin(context, _formKey), // Chama a lógica de login
+                      onPressed: () => controller.handleLogin(context, formKey), // Chama a lógica de login
                       child: const Text(
                         "Entrar",
                         style: TextStyle(

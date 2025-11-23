@@ -106,11 +106,14 @@ class ActivityScreen extends StatelessWidget {
       ),
       // Barra de navegação inferior
       bottomNavigationBar: CustomBottomNav(
-        componentColor: grayComponentColor,
-        onHomeTap: () => Navigator.pop(context), 
-        onActivityTap: () {},
-        activePath: 'assets/icons/icon4.png',
-      ),
+      componentColor: widgetsColor,
+      activeKey: 'atividades',
+      onHomeTap: () => Navigator.pushNamed(context, '/home'),
+      onTreinoTap: () => Navigator.pushNamed(context, '/atividades'),
+      onAtividadesTap: () => Navigator.pushNamed(context, '/activity'),
+      onConfigTap: () => Navigator.pushNamed(context, '/settings'),
+
+    ),
     );
   }
 

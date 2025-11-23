@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -53,10 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC3q3TBhgMoG_pXujgpJSuAXvMrGLgkUbY',
-    appId: '1:379446555881:android:772df98c4b40d4729f2c78',
-    messagingSenderId: '379446555881',
-    projectId: 'healthpulse-data',
-    storageBucket: 'healthpulse-data.firebasestorage.app',
+    apiKey: 'AIzaSyDTc-A-aV_nJEYKQb05-pCBYactaSlHBuM',
+    appId: '1:411225070178:android:42a86546d4d87592058f3b',
+    messagingSenderId: '411225070178',
+    projectId: 'trab-brademo-gabi-45984',
+    storageBucket: 'trab-brademo-gabi-45984.firebasestorage.app',
   );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAYGGnx5GgrXnG0m7-AbE-bxsugliERNNg',
+    appId: '1:411225070178:ios:c2c0ee76e0ce97b7058f3b',
+    messagingSenderId: '411225070178',
+    projectId: 'trab-brademo-gabi-45984',
+    storageBucket: 'trab-brademo-gabi-45984.firebasestorage.app',
+    iosBundleId: 'com.example.trabalho01',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAYGGnx5GgrXnG0m7-AbE-bxsugliERNNg',
+    appId: '1:411225070178:ios:c2c0ee76e0ce97b7058f3b',
+    messagingSenderId: '411225070178',
+    projectId: 'trab-brademo-gabi-45984',
+    storageBucket: 'trab-brademo-gabi-45984.firebasestorage.app',
+    iosBundleId: 'com.example.trabalho01',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAOiKKpAeeHLNFhVOKQw16qr2FYrAC3V7A',
+    appId: '1:411225070178:web:fbf2f3716d978d21058f3b',
+    messagingSenderId: '411225070178',
+    projectId: 'trab-brademo-gabi-45984',
+    authDomain: 'trab-brademo-gabi-45984.firebaseapp.com',
+    storageBucket: 'trab-brademo-gabi-45984.firebasestorage.app',
+    measurementId: 'G-76X24TBZRF',
+  );
+
 }

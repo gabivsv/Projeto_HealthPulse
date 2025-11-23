@@ -7,6 +7,8 @@ import '../widgets/stat_card.dart';
 
 import '../controller/home_controller.dart'; 
 
+import 'package:trabalho01/features/settings_screen/settings_screen.dart';
+
 import '../../../../core/widgets/custom_bottom_nav.dart'; 
 import '../../../../core/theme/app_theme.dart';
 
@@ -63,7 +65,19 @@ class _HomeState extends State<Home> {
             ListTile(leading: const Icon(Icons.fitness_center, color: Colors.white), title: const Text('Atividades', style: TextStyle(color: Colors.white)), onTap: () {Navigator.pop(context); Navigator.pushNamed(context, '/atividades');}),
             ListTile(leading: const Icon(Icons.favorite, color: Colors.white), title: const Text('Medições', style: TextStyle(color: Colors.white)), onTap: () {Navigator.pop(context); Navigator.pushNamed(context, '/medicoes');}),
             ListTile(leading: const Icon(Icons.bar_chart, color: Colors.white), title: const Text('Relatórios', style: TextStyle(color: Colors.white)), onTap: () {Navigator.pop(context); Navigator.pushNamed(context, '/relatorios');}),
-            ListTile(leading: const Icon(Icons.settings, color: Colors.white), title: const Text('Configurações', style: TextStyle(color: Colors.white)), onTap: () => Navigator.pop(context)),
+
+            ListTile(
+              leading: const Icon(Icons.settings, color: Colors.white),
+              title: const Text('Configurações', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.pop(context); // fecha o drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                );
+              },
+            ),
+
             ListTile(leading: const Icon(Icons.help, color: Colors.white), title: const Text('Ajuda / Suporte', style: TextStyle(color: Colors.white)), onTap: () => Navigator.pop(context)),
             ListTile(leading: const Icon(Icons.logout, color: Colors.white), title: const Text('Sair', style: TextStyle(color: Colors.white)), onTap: () {Navigator.pushNamedAndRemoveUntil(context, '/splash', (Route<dynamic> route) => false);
               },
@@ -73,11 +87,15 @@ class _HomeState extends State<Home> {
       ),
       
       bottomNavigationBar: CustomBottomNav(
-        componentColor: widgetsColor, 
-        onHomeTap: () {}, 
-        onActivityTap: () => _navigateToActivityScreen(context), 
-        activePath: 'assets/icons/icon1.png', 
-      ),
+      componentColor: widgetsColor,
+      activeKey: 'home',
+      onHomeTap: () => Navigator.pushNamed(context, '/home'),
+      onTreinoTap: () => Navigator.pushNamed(context, '/atividades'),
+      onAtividadesTap: () => Navigator.pushNamed(context, '/activity'),
+      onConfigTap: () => Navigator.pushNamed(context, '/settings'),
+
+    ),
+
 
       // Corpo da Tela Principal
       body: SafeArea(
@@ -154,7 +172,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              const SizedBox(height: 100), // Espaço extra para garantir que a barra inferior não corte o conteúdo
+              const SizedBox(height: 100), 
             ],
           ),
         ),

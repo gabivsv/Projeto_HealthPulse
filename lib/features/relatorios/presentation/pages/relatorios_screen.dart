@@ -52,7 +52,7 @@ class _RelatoriosScreenState extends State<RelatoriosScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: DropdownButtonFormField<String>(
-                  value: _selectedAlunoId,
+                  initialValue: _selectedAlunoId,
                   decoration: const InputDecoration(
                     labelText: 'Selecione um Aluno',
                     labelStyle: TextStyle(color: Colors.white70),

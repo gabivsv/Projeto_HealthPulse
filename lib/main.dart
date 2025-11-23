@@ -5,6 +5,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:trabalho01/core/theme/app_theme.dart';
 import 'package:trabalho01/core/services/notification_service.dart' show NotificationService, firebaseMessagingBackgroundHandler;
+import 'package:trabalho01/features/settings_screen/settings_screen.dart';
 import 'package:trabalho01/features/splash_screen/presentation/controller/splash_controller.dart';
 import 'package:trabalho01/features/splash_screen/presentation/pages/splash_screen.dart'; 
 
@@ -132,11 +133,11 @@ class MyApp extends StatelessWidget {
         ),
         
         // Tela inicial
-        initialRoute: '/splash',
+        initialRoute: '/home',
 
         // Mapa de Rotas
         routes: {
-          // As rotas usam os Controllers injetados acima no MultiProvider
+        
           '/splash': (context) => const SplashScreen(),
           '/home': (context) => const Home(),
           '/form': (context) => const FormScreen(),
@@ -144,9 +145,10 @@ class MyApp extends StatelessWidget {
           '/activity': (context) => const ActivityScreen(),
           '/login': (context) => const LoginScreen(),
           '/alunos': (context) => const AlunoListScreen(),
-          '/atividades': (context) => const AtividadeListScreen(),
           '/medicoes': (context) => const MedicaoListScreen(),
           '/relatorios': (context) => const RelatoriosScreen(),
+          '/settings': (context) => const SettingsScreen(),
+          '/atividades': (context) => const AtividadeListScreen()
         },
       ),
     );

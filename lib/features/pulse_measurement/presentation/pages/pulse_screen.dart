@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:trabalho01/core/theme/app_theme.dart'; 
 import '../controller/pulse_controller.dart';
 import '../widgets/progress_circle.dart';
-import '../widgets/heartbeat_graph.dart'; 
+import '../widgets/heartbeat_graph.dart';
+import 'package:trabalho01/features/history_measurement_screen/history_screen.dart'; 
 
 // Tela principal de medição de pulso
 class PulseScreen extends StatelessWidget {
@@ -46,6 +47,12 @@ class PulseScreen extends StatelessWidget {
             ),
           ),
           onTap: () {
+            Future.microtask(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HistoryScreen()),
+              );
+            });
             debugPrint("Opção Histórico Clicada!");
           },
         ),
