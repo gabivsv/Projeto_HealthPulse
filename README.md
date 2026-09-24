@@ -12,8 +12,6 @@ O HealthPulse permite que usuários registrem atividades físicas e medições m
 
 Os dados são armazenados e sincronizados com serviços do Firebase, incluindo autenticação, Cloud Firestore e notificações. A localização pode ser registrada no momento do cadastro de uma atividade ou medição.
 
-Esta versão é relacionada ao projeto bimestral disponível no repositório [projeto_bimestral_BRADEMO](https://github.com/iagobacci/projeto_bimestral_BRADEMO ) e contém alterações e funcionalidades desenvolvidas durante a evolução do trabalho colaborativo.
-
 ## Funcionalidades
 
 ### 🔐 Autenticação e cadastro
