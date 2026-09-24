@@ -10,6 +10,8 @@ O projeto foi desenvolvido em colaboração por [Gabriela Vieira](https://github
 
 O vídeo apresenta o funcionamento do aplicativo e suas principais funcionalidades, como autenticação, cadastro de atividades, registro de medições, geração de relatórios e gerenciamento de alunos.
 
+Clique na imagem para assistir ao vídeo completo:
+
 [![Assista à demonstração do HealthPulse](docs/screenshots/capa-video.png)](https://drive.google.com/file/d/17k_f9g6atsr1Fyf-HO9OiPvvsyU5wlAJ/view?usp=sharing )
 
 ## 🩺 Sobre o projeto
