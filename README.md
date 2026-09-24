@@ -6,6 +6,12 @@ O projeto foi desenvolvido em colaboração por [Gabriela Vieira](https://github
 
 > ⚠️ **Aviso:** o HealthPulse é um protótipo educacional. Ele não substitui avaliação médica, acompanhamento profissional ou sistemas destinados ao uso clínico.
 
+## Demonstração
+
+O vídeo apresenta o funcionamento do aplicativo e suas principais funcionalidades, como autenticação, cadastro de atividades, registro de medições, geração de relatórios e gerenciamento de alunos.
+
+[![Assista à demonstração do HealthPulse](docs/screenshots/capa-video.png)](https://drive.google.com/file/d/17k_f9g6atsr1Fyf-HO9OiPvvsyU5wlAJ/view?usp=sharing )
+
 ## 🩺 Sobre o projeto
 
 O HealthPulse permite que usuários registrem atividades físicas e medições manualmente, acompanhem seu histórico e visualizem relatórios de desempenho. O aplicativo também possui um fluxo específico para personal trainers gerenciarem seus alunos.
