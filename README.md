@@ -110,19 +110,6 @@ O aplicativo possui suporte a notificações locais e notificações push. Um ex
 - **Timezone** para configuração de notificações;
 - **Flutter Test** e **Flutter Lints** para testes e qualidade do código.
 
-## 💻 Plataformas
-
-O projeto possui estrutura para execução em:
-
-- Android;
-- iOS;
-- Web;
-- Windows;
-- Linux;
-- macOS.
-
-Alguns recursos podem exigir configurações específicas em cada plataforma, especialmente notificações, Firebase, armazenamento e localização.
-
 ##  📁  Estrutura do projeto
 
 ```text
@@ -158,6 +145,32 @@ healthpulse-flutter/
 ├── firestore.rules
 ├── pubspec.yaml
 └── README.md
+```
+## Como executar
+
+### Pré-requisitos
+
+- Flutter instalado;
+- Dart instalado;
+- Android Studio ou Visual Studio Code;
+- Conta e projeto configurados no Firebase.
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/gabivsv/Projeto_HealthPulse.git
+cd Projeto_HealthPulse
+```
+
+Instale as dependências:
+```bash
+flutter pub get
+```
+Execute o projeto:
+```bash
+flutter run
 ```
 ## 👩🏻‍💻 Autoria
 
